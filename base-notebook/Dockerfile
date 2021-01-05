@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook
+FROM jupyter/base-notebook:lab-2.2.9
 
 USER root
 
@@ -14,7 +14,6 @@ RUN apt-get update && apt-get -yq dist-upgrade && \
     rm -rf /var/lib/apt/lists/*
 
 COPY conf/ /
-
 
 RUN conda install --yes --insecure --override-channels --quiet \
     --channel conda-forge \
